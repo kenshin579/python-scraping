@@ -3,13 +3,15 @@ from selenium.webdriver.remote.webelement import WebElement
 from selenium.webdriver import ActionChains
 import unittest
 
+
 class TestAddition(unittest.TestCase):
     driver = None
+
     def setUp(self):
         global driver
-        #REPLACE WITH YOUR DRIVER PATH. EXAMPLES FOR CHROME AND PHANTOMJS
+        # REPLACE WITH YOUR DRIVER PATH. EXAMPLES FOR CHROME AND PHANTOMJS
         driver = webdriver.PhantomJS(executable_path='../phantomjs-2.1.1-macosx/bin/phantomjs')
-        #driver = webdriver.Chrome(executable_path='../chromedriver/chromedriver')
+        # driver = webdriver.Chrome(executable_path='../chromedriver/chromedriver')
         url = 'http://pythonscraping.com/pages/javascript/draggableDemo.html'
         driver.get(url)
 
@@ -24,6 +26,7 @@ class TestAddition(unittest.TestCase):
         actions.drag_and_drop(element, target).perform()
 
         self.assertEqual("You are definitely not a bot!", driver.find_element_by_id("message").text)
+
 
 if __name__ == '__main__':
     unittest.main()

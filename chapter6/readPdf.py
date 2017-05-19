@@ -5,6 +5,7 @@ from io import StringIO
 from io import open
 from urllib.request import urlopen
 
+
 def readPDF(pdfFile):
     rsrcmgr = PDFResourceManager()
     retstr = StringIO()
@@ -17,6 +18,7 @@ def readPDF(pdfFile):
     content = retstr.getvalue()
     retstr.close()
     return content
+
 
 pdfFile = urlopen("http://pythonscraping.com/pages/warandpeace/chapter1.pdf")
 outputString = readPDF(pdfFile)
