@@ -5,7 +5,7 @@ from scrapy import log
 
 
 class ArticleSpider(CrawlSpider):
-    # log.start(logfile='log.txt', loglevel=log.CRITICAL)
+    # log.start(logfile='log.txt', loglevel=log.INFO)
     name = "article"
     allowed_domains = ["en.wikipedia.org"]
     start_urls = ["http://en.wikipedia.org/wiki/Python_%28programming_language%29"]

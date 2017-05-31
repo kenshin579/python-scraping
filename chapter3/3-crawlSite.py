@@ -49,7 +49,7 @@ def getRandomExternalLink(startingPage):
 
 
 def followExternalOnly(startingSite):
-    externalLink = getRandomExternalLink("http://oreilly.com")
+    externalLink = getRandomExternalLink(startingSite)
     print("Random external link is: " + externalLink)
     followExternalOnly(externalLink)
 
