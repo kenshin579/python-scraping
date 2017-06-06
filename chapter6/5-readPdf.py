@@ -1,9 +1,9 @@
-from pdfminer.pdfinterp import PDFResourceManager, process_pdf
+from io import StringIO
+from urllib.request import urlopen
+
 from pdfminer.converter import TextConverter
 from pdfminer.layout import LAParams
-from io import StringIO
-from io import open
-from urllib.request import urlopen
+from pdfminer.pdfinterp import PDFResourceManager, process_pdf
 
 
 def readPDF(pdfFile):
@@ -21,6 +21,8 @@ def readPDF(pdfFile):
 
 
 pdfFile = urlopen("http://pythonscraping.com/pages/warandpeace/chapter1.pdf")
+# local file
+# pdfFile = open ("../pages/warandpeace/chapter1.pdf" "rb")
 outputString = readPDF(pdfFile)
 print(outputString)
 pdfFile.close()
